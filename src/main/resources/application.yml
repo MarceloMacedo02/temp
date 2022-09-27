@@ -1,0 +1,71 @@
+jwt:
+  secret: 123456
+  duration: ${JWT_DURATION:86400}
+
+
+
+
+#app:
+#  name: spring boot application
+#  api:
+#    title: Spring Boot APIs
+#    version: 1.0.0
+#    description: Spring Boot APIs description
+#    base-package: br.com.digital.apidigital
+#    contact-name: apisupportgroup
+#    contact-email: apisupportgroup@abc.com
+#    swagger:
+#      enable: true
+
+#spring:
+#  jpa:
+#    open-in-view: false
+#  profiles:
+#    active=test: {APP_PROFILE:test}
+security:
+  oauth2:
+    client:
+      client-id: ${CLIENT_ID:dscatalog}
+      client-secret: ${CLIENT_SECRET:dscatalog123}
+
+
+resilience4j.retry:
+  configs:
+    default:
+      maxAttempts: 3
+      waitDuration: 100
+management:
+  endpoint:
+    health:
+      enabled: true
+
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password:
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#  jpa:
+#    defer-datasource-initialization: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ualphb
+    username: ualphb
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+##spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+#
